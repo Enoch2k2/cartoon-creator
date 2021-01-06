@@ -1,0 +1,20 @@
+<h3 class="green-text text-darken-4">Create Character</h3>
+
+<form action="/cartoons/<%= @cartoon.id %>/characters/<%= @character.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="input-field">
+    <input type="text" name="character[name]" id="name" value="<%= @character.name %>">
+    <label for="name">Name</label>
+  </div>
+  <div class="input-field">
+    <textarea id="description" class="materialize-textarea" name="character[description]"><%= @character.description %></textarea>
+    <label for="description">Description</label>
+  </div>
+
+  <input type="submit" value="Update" class="btn green darken-3">
+</form>
+<br>
+<form action="/cartoons/<%= @cartoon.id %>/characters/<%= @character.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn red">
+</form>

@@ -1,0 +1,14 @@
+<h3 class="green-text text-darken-4">Create Character</h3>
+
+<form action="/cartoons/<%= @cartoon.id %>/characters" method="post">
+  <div class="input-field">
+    <input type="text" name="character[name]" id="name">
+    <label for="name">Name</label>
+  </div>
+  <div class="input-field">
+    <textarea id="description" class="materialize-textarea" name="character[description]"></textarea>
+    <label for="description">Description</label>
+  </div>
+
+  <input type="submit" value="Create Character" class="btn green darken-3">
+</form>

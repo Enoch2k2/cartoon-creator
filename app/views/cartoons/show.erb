@@ -1,6 +1,19 @@
 <h3 class="green-text text-darken-4"><%= @cartoon.title %></h3>
 <p>Description: <span class="<%= @cartoon.description ? "green-text" : "red-text" %>"><%= @cartoon.description ? @cartoon.description : "N/A" %></span></p>
-<p>Characters: <%# @cartoon.characters.map {|character| character.name }.join(", ") %></p>
+<p>Characters: 
+  <% if @cartoon.characters.length > 1 %>
+    <% @cartoon.characters.each do |character| %>
+      <a href="/cartoons/<%= @cartoon.id %>/characters/<%= character.id %>"><%= character.name %></a>
+    <% end %>
+  <% else %>
+    No Characters
+  <% end %>
+</p>
+
+
 <% if @cartoon.user == current_user %>
-  <a href="/cartoons/<%= @cartoon.id %>/edit">Edit</a>
+  <div class="owner-links">
+    <a href="/cartoons/<%= @cartoon.id %>/characters/new" class="btn-small green">Create Character</a>
+    <a href="/cartoons/<%= @cartoon.id %>/edit" class="btn-small green darken-3">Edit</a>
+  </div>
 <% end %>

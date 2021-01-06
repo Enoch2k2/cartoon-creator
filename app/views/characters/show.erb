@@ -1,0 +1,10 @@
+<h3 class="green-text text-darken-4"><%= @character.name %></h3>
+
+<p>Description: <%= @character.description ? @character.description : "N/A" %></p>
+<p>Cartoon: <%= @character.cartoon.title %></p>
+
+<% if @cartoon.user == current_user %>
+  <div class="owner-links">
+    <a href="/cartoons/<%= @cartoon.id %>/characters/<%= @character.id %>/edit" class="btn-small green darken-3">Edit</a>
+  </div>
+<% end %>
