@@ -8,9 +8,9 @@
           <p><%= cartoon.description %></p>
         </div>
         <div class="card-action">
-          <a href="#">More Information</a>
+          <a href="/cartoons/<%= cartoon.id %>">More Information</a>
           <% if cartoon.user == current_user %>
-            <a href="#">Edit</a>
+            <a href="/cartoons/<%= cartoon.id %>/edit">Edit</a>
           <% end %>
         </div>
       </div>
