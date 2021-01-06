@@ -1,6 +1,6 @@
 <h3 class="green-text text-darken-4"><%= @cartoon.title %></h3>
 <p>Description: <span class="<%= @cartoon.description ? "green-text" : "red-text" %>"><%= @cartoon.description ? @cartoon.description : "N/A" %></span></p>
-
+<p>Characters: <%# @cartoon.characters.map {|character| character.name }.join(", ") %></p>
 <% if @cartoon.user == current_user %>
   <a href="/cartoons/<%= @cartoon.id %>/edit">Edit</a>
 <% end %>
