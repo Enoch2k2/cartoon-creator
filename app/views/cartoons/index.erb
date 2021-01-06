@@ -1,1 +1,18 @@
-<h3>Cartoons</h3>
+<h3 class="green-text text-darken-4">Cartoons</h3>
+
+<% @cartoons.each do |cartoon| %>
+  <div class="card">
+     <div class="card green darken-3">
+        <div class="card-content white-text">
+          <span class="card-title"><%= cartoon.title %></span>
+          <p><%= cartoon.description %></p>
+        </div>
+        <div class="card-action">
+          <a href="#">More Information</a>
+          <% if cartoon.user == current_user %>
+            <a href="#">Edit</a>
+          <% end %>
+        </div>
+      </div>
+  </div>
+<% end %>
