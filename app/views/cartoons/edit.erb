@@ -1,0 +1,20 @@
+<h3 class="green-text text-darken-4">Edit <%= @cartoon.title %></h3>
+
+<form action="/cartoons/<%= @cartoon.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="input-field">
+    <input type="text" name="cartoon[title]" id="title" value="<%= @cartoon.title %>">
+    <label for="title">Title</label>
+  </div>
+  <div class="input-field">
+    <textarea id="description" class="materialize-textarea" name="cartoon[description]"><%= @cartoon.description %></textarea>
+    <label for="description">Description</label>
+  </div>
+
+  <input type="submit" value="Update" class="btn green darken-3">
+</form>
+<br>
+<form action="/cartoons/<%= @cartoon.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn-small red">
+</form>
