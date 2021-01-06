@@ -1,0 +1,14 @@
+<h3 class="green-text text-darken-4">Create Cartoon</h3>
+
+<form action="/cartoons" method="post">
+  <div class="input-field">
+    <input type="text" name="cartoon[title]" id="title">
+    <label for="title">Title</label>
+  </div>
+  <div class="input-field">
+    <textarea id="description" class="materialize-textarea" name="cartoon[description]"></textarea>
+    <label for="description">Description</label>
+  </div>
+
+  <input type="submit" value="Create Cartoon" class="btn green darken-3">
+</form>
